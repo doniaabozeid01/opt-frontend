@@ -1,0 +1,64 @@
+<div class="dashboard-wrapper">
+
+    <!-- الإحصائيات -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>إجمالي الطلبات</h3>
+            <p class="count">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>طلبات قيد التنفيذ</h3>
+            <p class="count">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>طلبات مكتملة</h3>
+            <p class="count">0</p>
+        </div>
+    </div>
+
+    <!-- طلباتي -->
+    <div class="orders-section">
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <div class="orders-header">
+                <h3>طلباتي</h3>
+                <span>عرض وإدارة جميع طلباتك</span>
+            </div>
+
+            <div class="orders-actions">
+                <button class="btn secondary" (click)="openPopup()">طلب متقدم</button>
+                <button class="btn primary">طلب سريع +</button>
+            </div>
+        </div>
+
+        <div class="orders-empty">
+            <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="No Orders">
+            <p>لا توجد طلبات بعد</p>
+            <span>ابدأ بإنشاء طلبك الأول</span>
+        </div>
+    </div>
+
+    <!-- معلومات الدفع -->
+    <div class="payment-info">
+        <h3>معلومات الدفع</h3>
+
+        <ul>
+            <li>التحويل البنكي المباشر</li>
+            <li>الدفع عند الاستلام</li>
+            <li>البطاقات الائتمانية (قريبًا)</li>
+        </ul>
+
+        <p class="note">
+            للاستفسارات حول الدفع يرجى التواصل مع قسم المحاسبة
+        </p>
+    </div>
+
+</div>
+
+
+
+<app-advanced-order-request 
+   *ngIf="showPopup" 
+   (closePopup)="showPopup = false">
+</app-advanced-order-request>

@@ -1,0 +1,130 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <!-- Header -->
+    <div class="modal-header d-flex flex-column align-items-start">
+      <h5 class="mb-2"> 
+        <i class="fa-solid fa-upload mx-1"></i>
+إنشاء طلب جديد
+      </h5>
+      <p>اختر الطريقة المناسبة لإرسال طلبك</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        class="d-flex justify-content-center align-items-center"
+        [class.active]="selectedTab === 'file'"
+        (click)="selectTab('file')"
+      >
+        <p class="mb-0 x">رفع ملفات</p>
+
+        <i class="fa-solid fa-upload mx-2"></i>
+      </button>
+
+      <button
+        class="d-flex justify-content-center align-items-center"
+        [class.active]="selectedTab === 'voice'"
+        (click)="selectTab('voice')"
+      >
+        <p class="mb-0 x">تسجيل صوتي</p>
+        <i class="fa-solid fa-microphone mx-2"></i>
+      </button>
+
+      <button
+        class="d-flex justify-content-center align-items-center"
+        [class.active]="selectedTab === 'text'"
+        (click)="selectTab('text')"
+      >
+        <p class="mb-0 x">إدخال نصي</p>
+        <i class="fa-solid fa-file mx-2"></i>
+      </button>
+    </div>
+
+    <!-- 📌 Text Tab -->
+    <div *ngIf="selectedTab === 'text'" class="content-section">
+      <label class="label">تفاصيل الطلب</label>
+
+      <textarea
+        class="textarea"
+        [(ngModel)]="orderDetails"
+        placeholder="أدخل تفاصيل الطلب هنا..."
+        rows="6"
+      ></textarea>
+
+      <p class="counter">عدد الأحرف: {{ orderDetails?.length || 0 }}</p>
+
+      <div class="tips-box">
+        <p class="tips-title">نصائح للإدخال النصي</p>
+        <ul>
+          <li>اذكر اسم الصنف والكمية المطلوبة</li>
+          <li>حدد المواصفات بدقة</li>
+          <li>أضف أي ملاحظات خاصة إن وجدت</li>
+          <li>استخدم الأرقام والتفاصيل الواضحة</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 🎤 Voice Recorder Tab -->
+    <div *ngIf="selectedTab === 'voice'" class="content-section voice-section">
+      <div class="voice-box">
+        <div
+          class="mic-icon d-flex justify-content-center align-items-center shadow-lg"
+        >
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+
+        <button class="record-btn" (click)="toggleRecording()">
+          {{ isRecording ? "إيقاف التسجيل" : "ابدأ التسجيل" }}
+        </button>
+
+        <p *ngIf="audioUrl" class="audio-preview">
+          <audio controls [src]="audioUrl"></audio>
+        </p>
+      </div>
+
+      <div class="tips-box">
+        <p class="tips-title">نصائح للتسجيل الصوتي</p>
+        <ul>
+          <li>تحدث بوضوح وببطء</li>
+          <li>اذكر الكميات والمواصفات بدقة</li>
+          <li>تجنب الضوضاء في الخلفية</li>
+          <li>الحد الأقصى للتسجيل: ٥ دقائق</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 📁 File Upload Tab -->
+    <div *ngIf="selectedTab === 'file'" class="content-section">
+      <div
+        class="upload-box"
+        (drop)="onDrop($event)"
+        (dragover)="onDragOver($event)"
+      >
+        <p>اضغط لرفع الملفات</p>
+        <p>أو اسحب الملفات وأفلتها هنا</p>
+
+        <input type="file" multiple (change)="onFilesSelected($event)" />
+      </div>
+
+      <!-- Preview Selected Files -->
+      <div *ngIf="files.length > 0" class="file-list">
+        <p *ngFor="let file of files">{{ file.name }}</p>
+      </div>
+
+      <div class="tips-box">
+        <p class="tips-title">نصائح لرفع الملفات</p>
+        <ul>
+          <li>Word: مناسب للقوائم المفصلة</li>
+          <li>Excel: مثالي للجداول والكميات</li>
+          <li>صور: خطط أو كتالوجات المنتجات</li>
+          <li>الحد الأقصى: 10 ميجابايت للملف الواحد</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button class="submit-btn" (click)="submitRequest()">إرسال الطلب</button>
+
+    <p class="security-msg">جميع البيانات والملفات محمية ومشفرة 🔒</p>
+  </div>
+</div>

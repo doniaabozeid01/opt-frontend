@@ -1,0 +1,39 @@
+<div class="login-page" dir="rtl">
+
+  <div class="login-card">
+
+    <img src="../../../../assets/logo-optimum.png" class="w-50 m-auto d-flex justify-content-center" alt="">
+    <h2 class="title my-1">تسجيل الدخول</h2>
+    <p class="text-center">مرحبا بكم في نظام اداره طلبات المدارس</p>
+
+    <form (ngSubmit)="onLogin()">
+
+      <!-- Email -->
+      <label for="email">البريد الإلكتروني</label>
+      <input 
+        id="email"
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="ادخل البريد الإلكتروني"
+        required
+      />
+
+      <!-- Password -->
+      <label for="password">كلمة المرور</label>
+      <input 
+        id="password"
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="ادخل كلمة المرور"
+        required
+      />
+
+      <button type="submit" class="login-btn">تسجيل الدخول</button>
+
+    </form>
+
+  </div>
+
+</div>
