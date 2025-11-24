@@ -13,9 +13,14 @@ export class ClientHomeComponent {
     this.router.navigate(['client-advanced-order-request']);
   }
 
-  showPopup = false;
+  showPopup1 = false;
+  showPopup2 = false;
 
-  openPopup() {
-    this.showPopup = true;
+  openPopup1() {
+    this.showPopup1 = true;
+  }
+
+  openPopup2() {
+    this.showPopup2 = true;
   }
 }

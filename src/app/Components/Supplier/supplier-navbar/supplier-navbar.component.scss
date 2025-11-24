@@ -1,0 +1,43 @@
+img{
+    width: 80px;
+    height: 70px;
+}
+
+
+
+.logout-btn{
+    border-radius: 6px;
+    border: 1px solid rgb(228, 227, 227);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 15px!important;
+}
+
+
+.nav-item{
+    margin: 0 25px 0 0;
+}
+
+
+.nav-link{
+    font-size: 16px;
+    padding: 6 16px;
+    border-radius: 10px;
+}
+
+.nav-link1:hover{
+    background-color: rgb(243, 228, 250);
+}
+
+.nav-link2:hover{
+    background-color: rgb(219, 245, 252);
+}
+
+.nav-link3:hover{
+    background-color: rgb(235, 255, 226);
+}
+
+.nav-link4:hover{
+    background-color: rgb(250, 228, 228);
+}

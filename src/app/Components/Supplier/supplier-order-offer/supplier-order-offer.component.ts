@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-advanced-order-request',
-  templateUrl: './advanced-order-request.component.html',
-  styleUrls: ['./advanced-order-request.component.scss'],
+  selector: 'app-supplier-order-offer',
+  templateUrl: './supplier-order-offer.component.html',
+  styleUrls: ['./supplier-order-offer.component.scss']
 })
-export class AdvancedOrderRequestComponent {
+export class SupplierOrderOfferComponent {
   isOpen = true;
 
   selectedTab: string = 'file';

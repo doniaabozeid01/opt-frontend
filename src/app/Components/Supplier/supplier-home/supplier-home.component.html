@@ -1,0 +1,108 @@
+<app-supplier-navbar></app-supplier-navbar>
+
+<div class="dashboard-wrapper">
+  <!-- الإحصائيات -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>طلبات جديدة</h3>
+      <p class="count">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>قيد التنفيذ</h3>
+      <p class="count purple">0</p>
+    </div>
+    <div class="stat-card">
+      <h3>مكتملة</h3>
+      <p class="count green">0</p>
+    </div>
+  </div>
+
+  <!-- الطلبات المستلمة -->
+  <div class="orders-section">
+    <div class="d-flex justify-content-between align-items-center my-0">
+      <div class="section-title ">
+        <h3>الطلبات المستلمة إليك</h3>
+        <p class="mb-0">عرض وإدارة الطلبات المخصّصة لك</p>
+      </div>
+
+      <!-- زر إرسال عرض سعر -->
+      <button class="btn-offer " (click)="openPopup()">
+        <i class="fa-solid fa-paper-plane mx-1"></i>
+        إرسال عرض سعر
+      </button>
+    </div>
+    <!-- جدول الطلبات -->
+    <div class="orders-table">
+      <table>
+        <thead>
+          <tr>
+            <th>رقم الطلب</th>
+            <th>المنتجات</th>
+            <th>الكمية الإجمالية</th>
+            <th>الحالة</th>
+            <th>التاريخ</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>001-801</td>
+            <td>
+              كتب مدرسية - الصف الأول<br />
+              أقلام رصاص<br />
+              ألوان خشبية
+            </td>
+            <td>650</td>
+            <td><span class="badge pending">في انتظار الموردين</span></td>
+            <td>2025/02/05</td>
+            <td>—</td>
+          </tr>
+
+          <tr>
+            <td>001-802</td>
+            <td>أدوات مكتبية متنوعة</td>
+            <td>60</td>
+            <td><span class="badge review">قيد المراجعة</span></td>
+            <td>2025/02/07</td>
+            <td>—</td>
+          </tr>
+
+          <tr>
+            <td>001-803</td>
+            <td>مسلتزمات التنظيف</td>
+            <td>200</td>
+            <td><span class="badge review">قيد المراجعة</span></td>
+            <td>2025/02/09</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- معلومات الدفع والمستودعات -->
+  <div class="payment-info">
+    <h3>معلومات الدفع والمستودعات</h3>
+
+    <p>سيتم الدفع لك بعد إتمام الطلب من العميل:</p>
+
+    <ul>
+      <li>المدفوعات تستغرق من 3 إلى 5 أيام عمل</li>
+      <li>في حالة وجود أي مشكلة سيتم التواصل معك مباشرة</li>
+      <li>يمكنك مراجعة صفحة المدفوعات من قسم المحاسبة</li>
+    </ul>
+
+    <button class="btn-full">
+      <i class="fa-solid fa-file-invoice mx-1"></i>
+      إرسال الفواتير المكتملة
+    </button>
+  </div>
+</div>
+
+
+
+
+
+<app-supplier-order-offer *ngIf="showPopup" (closePopup)="showPopup = false">
+</app-supplier-order-offer>

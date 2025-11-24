@@ -8,6 +8,11 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './Components/home/home.component';
 import { AdvancedOrderRequestComponent } from './Components/Client/advanced-order-request/advanced-order-request.component';
 import { ClientHomeComponent } from './Components/Client/client-home/client-home.component';
+import { HurryOrderRequestComponent } from './Components/Client/hurry-order-request/hurry-order-request.component';
+import { ClientNavbarComponent } from './Components/Client/client-navbar/client-navbar.component';
+import { SupplierHomeComponent } from './Components/Supplier/supplier-home/supplier-home.component';
+import { SupplierNavbarComponent } from './Components/Supplier/supplier-navbar/supplier-navbar.component';
+import { SupplierOrderOfferComponent } from './Components/Supplier/supplier-order-offer/supplier-order-offer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { ClientHomeComponent } from './Components/Client/client-home/client-home
     HomeComponent,
     LoginComponent,
     AdvancedOrderRequestComponent,
-    ClientHomeComponent
+    ClientHomeComponent,
+    HurryOrderRequestComponent,
+    ClientNavbarComponent,
+    SupplierHomeComponent,
+    SupplierNavbarComponent,
+    SupplierOrderOfferComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+
+    <!-- Header -->
+    <div class="modal-header d-flex flex-column align-items-start">
+      <h5 class="">إنشاء طلب جديد</h5>
+      <p class="">أدخل تفاصيل الطلب وسيتم مراجعته من قبل الإدارة</p>
+    </div>
+
+    <!-- المنتجات المطلوبة -->
+    <div class="field-box">
+      <label>المنتجات المطلوبة *</label>
+      <textarea
+        [(ngModel)]="products"
+        rows="4"
+        placeholder="مثال: أقلام رصاص، دفاتر، ألوان..."
+      ></textarea>
+    </div>
+
+    <!-- الكمية الإجمالية -->
+    <div class="field-box">
+      <label>الكمية الإجمالية *</label>
+      <input
+        type="number"
+        [(ngModel)]="quantity"
+        placeholder="100"
+      />
+    </div>
+
+    <!-- ملاحظات إضافية -->
+    <div class="field-box">
+      <label>ملاحظات إضافية</label>
+      <textarea
+        rows="3"
+        [(ngModel)]="notes"
+        placeholder="أي تفاصيل إضافية..."
+      ></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="actions">
+      <button class="submit" (click)="submitRequest()">إنشاء الطلب</button>
+      <button class="cancel" (click)="close()">إلغاء</button>
+    </div>
+
+  </div>
+</div>

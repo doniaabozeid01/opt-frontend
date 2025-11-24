@@ -4,11 +4,13 @@ import { LoginComponent } from './Components/Authentication/login/login.componen
 import { HomeComponent } from './Components/home/home.component';
 import { ClientHomeComponent } from './Components/Client/client-home/client-home.component';
 import { AdvancedOrderRequestComponent } from './Components/Client/advanced-order-request/advanced-order-request.component';
+import { SupplierHomeComponent } from './Components/Supplier/supplier-home/supplier-home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'client-home', component: ClientHomeComponent },
+  { path: 'supplier-home', component: SupplierHomeComponent },
   { path: 'client-advanced-order-request', component: AdvancedOrderRequestComponent },
   { path: 'login', component: LoginComponent },
 ];
