@@ -1,0 +1,19 @@
+<div class="smart-board py-5" dir="rtl">
+  <!-- TABS -->
+<div class="tabs-container p-5 m-auto">
+  <button
+    *ngFor="let tab of tabs"
+    class="tab-btn"
+    [ngClass]="{ 'active': tab.active }"
+    (click)="setActiveTab(tab)"
+  >
+    <i class="fa" [ngClass]="tab.icon"></i>
+    {{ tab.title }}
+  </button>
+</div>
+
+<!-- 👇 الجزء اللي بيتغير لكل Tab -->
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

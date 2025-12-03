@@ -13,6 +13,11 @@ import { ClientNavbarComponent } from './Components/Client/client-navbar/client-
 import { SupplierHomeComponent } from './Components/Supplier/supplier-home/supplier-home.component';
 import { SupplierNavbarComponent } from './Components/Supplier/supplier-navbar/supplier-navbar.component';
 import { SupplierOrderOfferComponent } from './Components/Supplier/supplier-order-offer/supplier-order-offer.component';
+import { ClientLayoutComponent } from './Components/Client/client-layout/client-layout.component';
+import { SupplierLayoutComponent } from './Components/Supplier/supplier-layout/supplier-layout.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminSmartDashboardComponent } from './Components/Admin/admin-smart-dashboard/admin-smart-dashboard.component';
+import { AdminLayoutComponent } from './Components/Admin/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { SupplierOrderOfferComponent } from './Components/Supplier/supplier-orde
     ClientNavbarComponent,
     SupplierHomeComponent,
     SupplierNavbarComponent,
-    SupplierOrderOfferComponent
+    SupplierOrderOfferComponent,
+    ClientLayoutComponent,
+    SupplierLayoutComponent,
+    AdminSmartDashboardComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
