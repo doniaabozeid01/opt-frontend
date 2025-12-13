@@ -9,10 +9,16 @@
 .login-card {
   background: white;
   padding: 30px;
-  width: 350px;
+  width: 35%;
   border-radius: 18px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    width: 85%;
+  }
 }
 
 .title {

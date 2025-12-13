@@ -20,16 +20,15 @@
   <!-- الطلبات المستلمة -->
   <div class="orders-section">
     <div class="d-flex justify-content-between align-items-center my-0">
-      <div class="section-title ">
+      <div class="section-title">
         <h3>الطلبات المستلمة إليك</h3>
         <p class="mb-0">عرض وإدارة الطلبات المخصّصة لك</p>
       </div>
 
-      <!-- زر إرسال عرض سعر -->
-      <button class="btn-offer " (click)="openPopup()">
+      <!-- <button class="btn-offer " (click)="openPopup()">
         <i class="fa-solid fa-paper-plane mx-1"></i>
         إرسال عرض سعر
-      </button>
+      </button> -->
     </div>
     <!-- جدول الطلبات -->
     <div class="orders-table">
@@ -56,7 +55,13 @@
             <td>650</td>
             <td><span class="badge pending">في انتظار الموردين</span></td>
             <td>2025/02/05</td>
-            <td>—</td>
+            <td class="p-0 d-flex align-items-center mt-4">
+              <!-- زر إرسال عرض سعر -->
+              <button class="btn-offer" (click)="openPopup()">
+                <i class="fa-solid fa-paper-plane mx-1"></i>
+                إرسال عرض سعر
+              </button>
+            </td>
           </tr>
 
           <tr>
@@ -65,7 +70,13 @@
             <td>60</td>
             <td><span class="badge review">قيد المراجعة</span></td>
             <td>2025/02/07</td>
-            <td>—</td>
+            <td class="p-0 d-flex align-items-center mt-3">
+              <!-- زر إرسال عرض سعر -->
+              <button class="btn-offer" (click)="openPopup()">
+                <i class="fa-solid fa-paper-plane mx-1"></i>
+                إرسال عرض سعر
+              </button>
+            </td>
           </tr>
 
           <tr>
@@ -74,7 +85,13 @@
             <td>200</td>
             <td><span class="badge review">قيد المراجعة</span></td>
             <td>2025/02/09</td>
-            <td>—</td>
+            <td class="p-0 d-flex align-items-center mt-3">
+              <!-- زر إرسال عرض سعر -->
+              <button class="btn-offer" (click)="openPopup()">
+                <i class="fa-solid fa-paper-plane mx-1"></i>
+                إرسال عرض سعر
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -93,16 +110,15 @@
       <li>يمكنك مراجعة صفحة المدفوعات من قسم المحاسبة</li>
     </ul>
 
-    <button class="btn-full">
+    <!-- <button class="btn-full">
       <i class="fa-solid fa-file-invoice mx-1"></i>
       إرسال الفواتير المكتملة
-    </button>
+    </button> -->
+    <p class="py-2 px-3 total-orders rounded-2">
+      اجمالي الطلبات المكتمله : <span> 0 </span>
+    </p>
   </div>
 </div>
-
-
-
-
 
 <app-supplier-order-offer *ngIf="showPopup" (closePopup)="showPopup = false">
 </app-supplier-order-offer>
